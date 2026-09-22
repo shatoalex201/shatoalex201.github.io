@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Светлане — 50</title>
+<title>Светлане — 50 лет</title>
 <script>document.documentElement.className+=" js";setTimeout(function(){if(window.__alive)return;var l=document.getElementById("loader");if(l)l.className+=" done"},9000)</script>
 <meta name="description" content="Приглашаем вас на юбилей Светланы 17 октября. Будем рады видеть вас!">
-<meta property="og:title" content="Светлане — 50">
+<meta property="og:title" content="Светлане — 50 лет">
 <meta property="og:description" content="Приглашаем вас на юбилей Светланы 17 октября. Будем рады видеть вас!">
 <meta property="og:image" content="og.jpg">
 <meta property="og:type" content="website">
@@ -38,27 +38,59 @@ a{color:inherit}
   background:radial-gradient(120% 90% at 50% 45%,transparent 35%,rgba(0,0,0,.55) 100%)}
 .scrim{position:fixed;left:0;right:0;top:-120px;bottom:-120px;z-index:1;pointer-events:none;background:#000;opacity:0;transition:opacity .2s linear}
 
-/* loader */
-.loader{position:fixed;inset:0;z-index:50;display:none;place-items:center;background:var(--bg);transition:opacity .8s ease,visibility .8s}
+/* opening: a letter in an envelope sealed with wax */
+.loader{position:fixed;inset:0;z-index:50;display:none;place-items:center;background:var(--bg);transition:opacity .8s ease,visibility .8s,background 1.2s ease;overflow:hidden}
 .js .loader{display:grid}
 .loader.done{opacity:0;visibility:hidden}
-.loader .l-in{text-align:center;width:min(260px,70vw)}
-.loader .l-name{font-family:var(--serif);font-size:30px;font-style:italic;letter-spacing:.02em;margin-bottom:22px}
-.loader .bar{height:1px;background:var(--line);position:relative;overflow:hidden}
-.loader .bar i{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .2s}
-.loader .bar.wait i{width:34%!important;animation:lwait 1.4s ease-in-out infinite}
-@keyframes lwait{0%{transform:translateX(-100%)}100%{transform:translateX(300%)}}
-.loader .pct{margin-top:14px;font-size:12px;letter-spacing:.3em;color:var(--muted)}
-.loader .enter{margin-top:26px;display:none;white-space:nowrap;padding:0 30px}
-.loader.gate .l-in{width:auto;max-width:calc(100vw - 32px)}
-@media (max-width:360px){.loader .enter{letter-spacing:.12em;padding:0 20px}}
-.loader.gate .enter{display:inline-flex}
-.loader.gate .bar,.loader.gate .pct{display:none}
-.snd{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:calc(14px + env(safe-area-inset-bottom));z-index:40;width:44px;height:44px;border-radius:50%;
-  border:1px solid var(--accent-line);background:rgba(12,11,10,.72);color:var(--accent);display:none;align-items:center;justify-content:center;cursor:pointer;padding:0}
-.snd.on-page{display:inline-flex}
-.snd svg{width:20px;height:20px}
-.snd .off{display:none}.snd.muted .on{display:none}.snd.muted .off{display:block}
+.loader::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(46% 34% at 50% 50%,rgba(212,178,106,.13),transparent 72%),radial-gradient(90% 60% at 50% 110%,rgba(120,70,30,.18),transparent 70%)}
+.lbk{position:absolute;inset:0;pointer-events:none}
+.lbk i{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(240,205,130,.55),rgba(240,205,130,0) 70%);animation:lbk 9s ease-in-out infinite;opacity:.0}
+@keyframes lbk{0%{opacity:0;transform:translateY(12px) scale(.9)}40%{opacity:.8}100%{opacity:0;transform:translateY(-40px) scale(1.1)}}
+.env-scene{position:relative;display:flex;flex-direction:column;align-items:center;gap:30px;transition:opacity .6s}
+.env{position:relative;width:min(84vw,360px);aspect-ratio:1.42}
+.env-sh{position:absolute;left:4%;right:4%;bottom:-9%;height:16%;background:radial-gradient(closest-side,rgba(0,0,0,.7),transparent);filter:blur(5px)}
+.env-back{position:absolute;inset:0;border-radius:4px;background:linear-gradient(180deg,#d9cbb1,#e6d9c2)}
+.env-card{position:absolute;left:5%;right:5%;top:5%;height:90%;z-index:1;border-radius:3px;background:linear-gradient(180deg,#fcf8f0,#f2e9d9);
+  box-shadow:0 2px 12px rgba(0,0,0,.22);outline:1px solid rgba(168,131,74,.5);outline-offset:-8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#3b3228;
+  transition:transform 1.05s cubic-bezier(.2,.8,.2,1) .95s,opacity 1s ease}
+.env-card .k{font-family:var(--display,var(--serif));letter-spacing:.32em;font-size:10px;color:#a8834a;text-transform:uppercase}
+.env-card .n{font-family:var(--serif);font-style:italic;font-size:clamp(22px,6.6vw,31px);line-height:1.1;margin:10px 0 8px}
+.env-card .d{font-size:10px;letter-spacing:.3em;color:#8a7b66}
+.env-front{position:absolute;inset:0;z-index:2;border-radius:4px;clip-path:polygon(0 0,50% 50%,100% 0,100% 100%,0 100%);
+  background:linear-gradient(to top right,rgba(0,0,0,.05) 50%,transparent 50%) left/50.2% 100% no-repeat,linear-gradient(to top left,rgba(0,0,0,.05) 50%,transparent 50%) right/50.2% 100% no-repeat,linear-gradient(165deg,#f3eadb,#e5d7be)}
+.env-to{position:absolute;left:0;right:0;bottom:9%;text-align:center}
+.env-to span{display:block;font-family:var(--display,var(--serif));letter-spacing:.36em;font-size:10px;text-transform:uppercase;color:#a8834a;margin-bottom:4px}
+.env-to em{font-family:var(--serif);font-style:italic;font-size:clamp(21px,6vw,28px);color:#4a3b2a}
+.env-flapw{position:absolute;inset:0;z-index:3;perspective:900px;filter:drop-shadow(0 3px 3px rgba(0,0,0,.2));transition:z-index 0s linear .7s}
+.env-flap{position:absolute;left:0;right:0;top:0;height:52%;transform-origin:50% 0;border-radius:4px 4px 0 0;clip-path:polygon(0 0,100% 0,50% 100%);
+  background:linear-gradient(180deg,#e8dbc3,#d8c8ac);transition:transform .85s cubic-bezier(.45,0,.2,1) .25s}
+.seal{position:absolute;left:50%;top:51%;width:72px;height:72px;margin:-36px 0 0 -36px;z-index:4;border:0;padding:0;background:none;border-radius:50%;cursor:default;
+  -webkit-tap-highlight-color:transparent;transition:transform .55s cubic-bezier(.5,-.4,.6,1),opacity .5s}
+.seal .wax{position:absolute;inset:7px;border-radius:48% 52% 50% 50%/52% 47% 53% 48%;display:grid;place-items:center;
+  background:radial-gradient(circle at 34% 28%,#b03a42,#7a1d26 58%,#4c0f16);box-shadow:0 4px 10px rgba(0,0,0,.45),inset 0 -3px 6px rgba(0,0,0,.35),inset 0 2px 3px rgba(255,255,255,.2)}
+.seal .wax::after{content:"";position:absolute;inset:8px;border-radius:50%;border:1px solid rgba(255,220,200,.16)}
+.seal .mono{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1;color:#94303a;text-shadow:0 1px 0 rgba(255,230,220,.28),0 -1px 1px rgba(0,0,0,.45)}
+.seal .ring{position:absolute;inset:0;transform:rotate(-90deg);transition:opacity .6s}
+.seal .ring circle{fill:none;stroke-width:1.4}
+.seal .ring .tr{stroke:rgba(212,178,106,.2)}
+.seal .ring .pg{stroke:var(--accent);stroke-dasharray:213.6;stroke-dashoffset:213.6;transition:stroke-dashoffset .35s ease}
+.loader.gate .seal{cursor:pointer;animation:sealbreath 2.6s ease-in-out infinite}
+.loader.gate .seal .ring{opacity:0}
+.loader.gate .seal::after{content:"";position:absolute;inset:6px;border-radius:50%;animation:sealglow 2.6s ease-out infinite}
+@keyframes sealbreath{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes sealglow{0%{box-shadow:0 0 0 0 rgba(212,178,106,.5)}80%,100%{box-shadow:0 0 0 18px rgba(212,178,106,0)}}
+.env-hint{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);min-height:1.3em;text-align:center;transition:opacity .5s}
+.loader.opening .seal{animation:none;transform:scale(1.45) rotate(-10deg);opacity:0}
+.loader.opening .env-flapw{z-index:0}
+.loader.opening .env-flap{transform:rotateX(180deg)}
+.loader.opening .env-card{transform:translateY(-66%)}
+.loader.opening .env-hint{opacity:0}
+.loader.leaving{background:rgba(10,10,10,0)}
+.loader.leaving::before,.loader.leaving .lbk{opacity:0;transition:opacity 1s}
+.loader.leaving .env-back,.loader.leaving .env-front,.loader.leaving .env-flapw,.loader.leaving .env-sh{transform:translateY(60%);opacity:0;transition:transform 1.05s cubic-bezier(.55,0,.85,.35),opacity .85s ease .15s}
+.loader.leaving .env-card{transform:translateY(-66%) scale(1.14);opacity:0;transition:transform 1.3s ease,opacity 1.05s ease .25s}
+@media (prefers-reduced-motion:reduce){.env-flap,.env-card,.seal{transition-duration:.01s!important;transition-delay:0s!important}.loader.gate .seal,.loader.gate .seal::after{animation:none}}
 
 /* scroll content */
 main{position:relative;z-index:2;overflow-x:hidden;overflow-x:clip}
@@ -160,6 +192,18 @@ footer .sig{font-family:var(--serif);font-style:italic;font-size:26px;color:var(
 section.air{min-height:128vh;min-height:128svh}
 h1 em.num,.deco h1 em.num{font-size:1.55em;letter-spacing:.02em;line-height:.9;margin-top:.08em;color:var(--accent);text-shadow:0 0 40px rgba(212,178,106,.35),0 4px 30px rgba(0,0,0,.6)}
 .petals{position:fixed;inset:0;z-index:1;pointer-events:none;width:100%;height:100%}
+.petals.over{z-index:60}
+.sun{position:fixed;inset:-20%;z-index:1;pointer-events:none;opacity:.55;
+  background:radial-gradient(38% 30% at 22% 18%,rgba(255,214,150,.16),transparent 70%),radial-gradient(30% 24% at 82% 62%,rgba(255,200,130,.10),transparent 70%);
+  animation:sun 22s ease-in-out infinite alternate;will-change:transform}
+@keyframes sun{0%{transform:translate3d(-3%,-2%,0) rotate(0deg)}100%{transform:translate3d(4%,3%,0) rotate(6deg)}}
+.orn path{stroke-dasharray:160;stroke-dashoffset:0}
+.js .reveal .orn path{stroke-dashoffset:160;transition:stroke-dashoffset 1.8s cubic-bezier(.3,.6,.2,1) .35s}
+.js .reveal .orn path[fill]{opacity:0;transition:opacity 1s ease 1.3s}
+.js .reveal.in .orn path{stroke-dashoffset:0}
+.js .reveal.in .orn path[fill]{opacity:1}
+h1 .lt{display:block;font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:.04em;font-size:clamp(22px,6vw,34px);color:rgba(245,241,232,.86);margin-top:.1em}
+@media (prefers-reduced-motion:reduce){.sun{animation:none}}
 .theme-line{margin-top:18px;font-size:14px;letter-spacing:.1em;color:rgba(245,241,232,.82);font-style:italic;font-family:var(--serif)}
 .theme-line b{color:var(--accent);font-weight:400}
 .map{position:relative;margin:22px 0 4px;border:1px solid var(--accent-line);border-radius:3px;overflow:hidden;aspect-ratio:4/3;max-width:100%;background:
@@ -173,12 +217,23 @@ h1 em.num,.deco h1 em.num{font-size:1.55em;letter-spacing:.02em;line-height:.9;m
 </style>
 </head>
 <body>
-<div class="loader" id="loader" aria-hidden="true"><div class="l-in">
-  <div class="l-name">Светлана · 50</div>
-  <div class="bar wait" id="lbarw"><i id="lbar"></i></div>
-  <div class="pct" id="lpct">0%</div>
-  <button class="btn solid enter" id="enter" type="button">Открыть приглашение</button>
-</div></div>
+<div class="loader" id="loader">
+  <div class="lbk" aria-hidden="true"><i style="left:12%;top:24%;width:70px;height:70px;animation-delay:0s"></i><i style="left:78%;top:18%;width:46px;height:46px;animation-delay:2.2s"></i><i style="left:66%;top:74%;width:90px;height:90px;animation-delay:4.1s"></i><i style="left:20%;top:70%;width:38px;height:38px;animation-delay:6s"></i><i style="left:46%;top:10%;width:30px;height:30px;animation-delay:3.2s"></i></div>
+  <div class="env-scene">
+    <div class="env">
+      <div class="env-sh"></div>
+      <div class="env-back"></div>
+      <div class="env-card" aria-hidden="true"><div class="k">Приглашение</div><div class="n">Светлане — 50 лет</div><div class="d">17 · 10 · 2026</div></div>
+      <div class="env-front"><div class="env-to"><em>Юбилей Светланы</em></div></div>
+      <div class="env-flapw"><div class="env-flap"></div></div>
+      <button class="seal" id="enter" type="button" aria-label="Открыть приглашение">
+        <svg class="ring" viewBox="0 0 72 72" aria-hidden="true"><circle class="tr" cx="36" cy="36" r="34"/><circle class="pg" id="lring" cx="36" cy="36" r="34"/></svg>
+        <span class="wax"><span class="mono">С</span></span>
+      </button>
+    </div>
+    <div class="env-hint" id="lhint">Готовим приглашение…</div>
+  </div>
+</div>
 
 <div class="stage" aria-hidden="true"><div class="layers" id="layers"><canvas id="cv"></canvas><canvas id="cv2"></canvas></div></div>
 <div class="scrim" id="scrim"></div>
@@ -186,7 +241,7 @@ h1 em.num,.deco h1 em.num{font-size:1.55em;letter-spacing:.02em;line-height:.9;m
 
 <main id="main"><section id="hero" class="air"><div class="wrap reveal glow">
   <div class="kicker">Юбилей</div>
-  <h1>Светлана<em class="num">50</em></h1>
+  <h1>Светлане<em class="num">50</em><span class="lt">лет</span></h1>
   <svg class="orn" viewBox="0 0 220 28" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 14h78M142 14h78"></path><path d="M84 14h14M122 14h14" stroke-width="2"></path><path d="M110 2l12 12-12 12-12-12z"></path><path d="M110 8l6 6-6 6-6-6z" fill="currentColor"></path><path d="M60 9h18M142 9h18M66 19h12M142 19h12"></path></svg>
   <div class="hero-date">17&nbsp;октября 2026</div>
   
@@ -198,7 +253,7 @@ h1 em.num,.deco h1 em.num{font-size:1.55em;letter-spacing:.02em;line-height:.9;m
   <div class="map" id="map"><div class="pin"><div><i></i><b>х. Садки</b>Маршрут откроется по кнопке ниже</div></div></div>
   <div class="row">
     <a class="btn solid" href="https://yandex.ru/maps/?rtext=~45.9419,38.1056&amp;rtt=auto" target="_blank" rel="noopener">Как добраться</a>
-    <a class="btn" href="data:text/calendar;charset=utf-8;base64,QkVHSU46VkNBTEVOREFSDQpWRVJTSU9OOjIuMA0KUFJPRElEOi0vL2ludml0ZS8vUlUNCkNBTFNDQUxFOkdSRUdPUklBTg0KQkVHSU46VkVWRU5UDQpVSUQ6c3ZldGxhbmEtNTBAaW52aXRlDQpEVFNUQU1QOjIwMjYwOTIyVDE1MzgyOVoNCkRUU1RBUlQ6MjAyNjEwMTdUMTIwMDAwWg0KRFRFTkQ6MjAyNjEwMTdUMTgwMDAwWg0KU1VNTUFSWTrQrtCx0LjQu9C10Lkg0KHQstC10YLQu9Cw0L3Riw0KTE9DQVRJT0460YUuINCh0LDQtNC60LhcLCDQn9GA0LjQvNC+0YDRgdC60L4t0JDRhdGC0LDRgNGB0LrQuNC5INGA0LDQudC+0L0gwrcg0YLQvtGH0L3Ri9C5INCw0LTRgNC10YEg0L/RgNC40YjQu9GR0LwNCkJFR0lOOlZBTEFSTQ0KVFJJR0dFUjotUDFEDQpBQ1RJT046RElTUExBWQ0KREVTQ1JJUFRJT0460K7QsdC40LvQtdC5INCh0LLQtdGC0LvQsNC90YsNCkVORDpWQUxBUk0NCkVORDpWRVZFTlQNCkVORDpWQ0FMRU5EQVINCg==" download="svetlana-50.ics" id="ics">В календарь</a>
+    <a class="btn" href="data:text/calendar;charset=utf-8;base64,QkVHSU46VkNBTEVOREFSDQpWRVJTSU9OOjIuMA0KUFJPRElEOi0vL2ludml0ZS8vUlUNCkNBTFNDQUxFOkdSRUdPUklBTg0KQkVHSU46VkVWRU5UDQpVSUQ6c3ZldGxhbmEtNTBAaW52aXRlDQpEVFNUQU1QOjIwMjYwOTIyVDE2NDM1NFoNCkRUU1RBUlQ6MjAyNjEwMTdUMTIwMDAwWg0KRFRFTkQ6MjAyNjEwMTdUMTgwMDAwWg0KU1VNTUFSWTrQrtCx0LjQu9C10Lkg0KHQstC10YLQu9Cw0L3Riw0KTE9DQVRJT0460YUuINCh0LDQtNC60LhcLCDQn9GA0LjQvNC+0YDRgdC60L4t0JDRhdGC0LDRgNGB0LrQuNC5INGA0LDQudC+0L0gwrcg0YLQvtGH0L3Ri9C5INCw0LTRgNC10YEg0L/RgNC40YjQu9GR0LwNCkJFR0lOOlZBTEFSTQ0KVFJJR0dFUjotUDFEDQpBQ1RJT046RElTUExBWQ0KREVTQ1JJUFRJT0460K7QsdC40LvQtdC5INCh0LLQtdGC0LvQsNC90YsNCkVORDpWQUxBUk0NCkVORDpWRVZFTlQNCkVORDpWQ0FMRU5EQVINCg==" download="svetlana-50.ics" id="ics">В календарь</a>
   </div>
 </div></div></section><section class="air"><div class="wrap reveal glow">
   <div class="kicker">Дресс-код</div><h2>Немного блеска</h2><p class="lead">Будем рады видеть вас в&nbsp;нарядных вечерних образах.</p>
@@ -230,7 +285,7 @@ h1 em.num,.deco h1 em.num{font-size:1.55em;letter-spacing:.02em;line-height:.9;m
 <footer id="foot"><div class="sig">С&nbsp;любовью, ваша семья</div><div>Вопросы&nbsp;— Алексей</div></footer>
 
 <script>
-const CFG = {"slug": "svetlana-50", "theme": "deco", "fit": "auto", "accent": "#D4B26A", "smooth": 0.09, "petals": true, "title": "Светлане — 50", "description": "Приглашаем вас на юбилей Светланы 17 октября. Будем рады видеть вас!", "loader_name": "Светлана · 50", "hero_kicker": "Юбилей", "hero_title": "Светлана", "hero_sub": "50", "date_text": "17 октября 2026", "time_text": "суббота, сбор гостей в 15:00", "date_iso": "2026-10-17T15:00:00+03:00", "duration_hours": 6, "calendar_title": "Юбилей Светланы", "invite_title": "Дорогие наши!", "invite_text": "Пятьдесят лет — это целая жизнь, наполненная любовью, музыкой и людьми, которые стали по-настоящему родными.\n\nЭтот день нам хочется провести в кругу самых близких. Будем счастливы видеть вас рядом.", "place_name": "х. Садки", "place_address": "Приморско-Ахтарский район · точный адрес пришлём", "map": {"lat": 45.9419, "lon": 38.1056, "zoom": 13, "label": "х. Садки"}, "dress_code_title": "Немного блеска", "dress_code": "Будем рады видеть вас в нарядных вечерних образах.", "dress_colors": [], "rsvp_deadline": "1 октября", "drinks": ["Сухое шампанское", "Полусладкое шампанское", "Коньяк", "Вино красное", "Вино белое", "Безалкогольные напитки"], "wish_label": "Пожелание Светлане", "rsvp_endpoint": "https://script.google.com/macros/s/AKfycby_7jx4vBLq4o7wn7teA3UyUH-XTcXjo9fBd-_3vPTUdFv1AXCf5xmMjTha35jxTVVe/exec", "signature": "С любовью, ваша семья", "contact_text": "Вопросы — Алексей", "video_share": 0.8, "ask_food": false, "music": "music.mp3", "ics_href": "data:text/calendar;charset=utf-8;base64,QkVHSU46VkNBTEVOREFSDQpWRVJTSU9OOjIuMA0KUFJPRElEOi0vL2ludml0ZS8vUlUNCkNBTFNDQUxFOkdSRUdPUklBTg0KQkVHSU46VkVWRU5UDQpVSUQ6c3ZldGxhbmEtNTBAaW52aXRlDQpEVFNUQU1QOjIwMjYwOTIyVDE1MzgyOVoNCkRUU1RBUlQ6MjAyNjEwMTdUMTIwMDAwWg0KRFRFTkQ6MjAyNjEwMTdUMTgwMDAwWg0KU1VNTUFSWTrQrtCx0LjQu9C10Lkg0KHQstC10YLQu9Cw0L3Riw0KTE9DQVRJT0460YUuINCh0LDQtNC60LhcLCDQn9GA0LjQvNC+0YDRgdC60L4t0JDRhdGC0LDRgNGB0LrQuNC5INGA0LDQudC+0L0gwrcg0YLQvtGH0L3Ri9C5INCw0LTRgNC10YEg0L/RgNC40YjQu9GR0LwNCkJFR0lOOlZBTEFSTQ0KVFJJR0dFUjotUDFEDQpBQ1RJT046RElTUExBWQ0KREVTQ1JJUFRJT0460K7QsdC40LvQtdC5INCh0LLQtdGC0LvQsNC90YsNCkVORDpWQUxBUk0NCkVORDpWRVZFTlQNCkVORDpWQ0FMRU5EQVINCg=="};
+const CFG = {"slug": "svetlana-50", "theme": "deco", "fit": "auto", "accent": "#D4B26A", "smooth": 0.09, "petals": true, "title": "Светлане — 50 лет", "description": "Приглашаем вас на юбилей Светланы 17 октября. Будем рады видеть вас!", "hero_kicker": "Юбилей", "hero_title": "Светлане", "hero_sub": "50", "date_text": "17 октября 2026", "time_text": "суббота, сбор гостей в 15:00", "date_iso": "2026-10-17T15:00:00+03:00", "duration_hours": 6, "calendar_title": "Юбилей Светланы", "invite_title": "Дорогие наши!", "invite_text": "Пятьдесят лет — это целая жизнь, наполненная любовью, музыкой и людьми, которые стали по-настоящему родными.\n\nЭтот день нам хочется провести в кругу самых близких. Будем счастливы видеть вас рядом.", "place_name": "х. Садки", "place_address": "Приморско-Ахтарский район · точный адрес пришлём", "map": {"lat": 45.9419, "lon": 38.1056, "zoom": 13, "label": "х. Садки"}, "dress_code_title": "Немного блеска", "dress_code": "Будем рады видеть вас в нарядных вечерних образах.", "dress_colors": [], "rsvp_deadline": "1 октября", "drinks": ["Сухое шампанское", "Полусладкое шампанское", "Коньяк", "Вино красное", "Вино белое", "Безалкогольные напитки"], "wish_label": "Пожелание Светлане", "rsvp_endpoint": "https://script.google.com/macros/s/AKfycby_7jx4vBLq4o7wn7teA3UyUH-XTcXjo9fBd-_3vPTUdFv1AXCf5xmMjTha35jxTVVe/exec", "signature": "С любовью, ваша семья", "contact_text": "Вопросы — Алексей", "video_share": 0.8, "ask_food": false, "music": "music.mp3", "hero_sub_after": "лет", "env_top": "Юбилей", "env_name": "Светланы", "seal": "С", "card_kicker": "Приглашение", "card_title": "Светлане — 50 лет", "card_date": "17 · 10 · 2026", "ics_href": "data:text/calendar;charset=utf-8;base64,QkVHSU46VkNBTEVOREFSDQpWRVJTSU9OOjIuMA0KUFJPRElEOi0vL2ludml0ZS8vUlUNCkNBTFNDQUxFOkdSRUdPUklBTg0KQkVHSU46VkVWRU5UDQpVSUQ6c3ZldGxhbmEtNTBAaW52aXRlDQpEVFNUQU1QOjIwMjYwOTIyVDE2NDM1NFoNCkRUU1RBUlQ6MjAyNjEwMTdUMTIwMDAwWg0KRFRFTkQ6MjAyNjEwMTdUMTgwMDAwWg0KU1VNTUFSWTrQrtCx0LjQu9C10Lkg0KHQstC10YLQu9Cw0L3Riw0KTE9DQVRJT0460YUuINCh0LDQtNC60LhcLCDQn9GA0LjQvNC+0YDRgdC60L4t0JDRhdGC0LDRgNGB0LrQuNC5INGA0LDQudC+0L0gwrcg0YLQvtGH0L3Ri9C5INCw0LTRgNC10YEg0L/RgNC40YjQu9GR0LwNCkJFR0lOOlZBTEFSTQ0KVFJJR0dFUjotUDFEDQpBQ1RJT046RElTUExBWQ0KREVTQ1JJUFRJT0460K7QsdC40LvQtdC5INCh0LLQtdGC0LvQsNC90YsNCkVORDpWQUxBUk0NCkVORDpWRVZFTlQNCkVORDpWQ0FMRU5EQVINCg=="};
 const FRAMES = {"dir": "frames", "dir_m": null, "prefix": "f_", "ext": ".webp", "count": 237, "w": 720, "h": 1280, "wm": 720, "hm": 1280, "inline": true};
 </script>
 <script>
@@ -250,7 +305,7 @@ const paras = t => String(t||"").split(/\n\s*\n/).filter(Boolean).map(p=>`<p cla
 const S = [];
 S.push(`<section id="hero" class="air"><div class="wrap reveal glow">
   ${CFG.hero_kicker?`<div class="kicker">${esc(CFG.hero_kicker)}</div>`:""}
-  <h1>${esc(CFG.hero_title)}${CFG.hero_sub?`<em class="${String(CFG.hero_sub).length<=3?"num":""}">${esc(CFG.hero_sub)}</em>`:""}</h1>
+  <h1>${esc(CFG.hero_title)}${CFG.hero_sub?`<em class="${String(CFG.hero_sub).length<=3?"num":""}">${esc(CFG.hero_sub)}</em>`:""}${CFG.hero_sub_after?`<span class="lt">${esc(CFG.hero_sub_after)}</span>`:""}</h1>
   ${CFG.theme==="deco"?ORN:""}
   <div class="hero-date">${esc(CFG.date_text||"")}</div>
   ${CFG.theme_line?`<div class="theme-line">${CFG.theme_line_html||esc(CFG.theme_line)}</div>`:""}
@@ -452,13 +507,13 @@ function tick(t){
   requestAnimationFrame(tick);
 }
 function onOne(){
-  loaded++; if (loaded === 1) $("#lbarw").classList.remove("wait");
-  const pct = Math.round(loaded/N*100);
-  $("#lbar").style.width = pct+"%"; $("#lpct").textContent = pct+"%";
+  loaded++;
+  $("#lring").style.strokeDashoffset = String(213.6 * (1 - loaded/N));
 }
 function start(){
   if (started) return; started = true; dirty = true;
-  if (CFG.music) $("#loader").classList.add("gate"); else $("#loader").classList.add("done");
+  $("#lring").style.strokeDashoffset = "0";
+  $("#loader").classList.add("gate"); $("#lhint").textContent = "Коснитесь печати";
 }
 /* ---------- music ---------- */
 let audio = null, wantSound = true;
@@ -468,9 +523,23 @@ function playMusic(){
   if (!audio){ audio = new Audio(CFG.music); audio.loop = true; audio.preload = "auto"; audio.volume = 0.8; }
   const pr = audio.play(); if (pr && pr.catch) pr.catch(() => { wantSound = false; setSndUi(); });
 }
+let opened = false;
 $("#enter").addEventListener("click", () => {
-  $("#loader").classList.add("done"); $("#loader").classList.remove("gate");
-  if (CFG.music) { $("#snd").classList.add("on-page"); wantSound = true; setSndUi(); playMusic(); }
+  const L = $("#loader");
+  if (!L.classList.contains("gate") || opened) return;
+  opened = true;
+  if (CFG.music) { wantSound = true; setSndUi(); playMusic(); }      // must start inside the tap on iOS
+  const quick = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  L.classList.add("opening");
+  const r = $(".env").getBoundingClientRect();
+  setTimeout(() => {
+    L.classList.add("leaving");
+    if (window.__fx) window.__fx.burst(r.left + r.width/2, r.top + r.height*0.45, {petals: 26, sparks: 22, spread: 1.6, over: true});
+  }, quick ? 60 : 2750);
+  setTimeout(() => {
+    L.classList.add("done"); L.classList.remove("gate","opening","leaving");
+    if (CFG.music) $("#snd").classList.add("on-page");
+  }, quick ? 400 : 3950);
 });
 $("#snd").addEventListener("click", () => {
   wantSound = !wantSound; setSndUi();
@@ -531,48 +600,83 @@ if (mapEl && !IN_PREVIEW) {
 const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add("in");} }),{threshold:.18});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 
-/* ---------- falling petals when the guest pauses ---------- */
-if (CFG.petals && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const pc=document.createElement("canvas"); pc.className="petals"; pc.setAttribute("aria-hidden","true");
-  document.body.insertBefore(pc, $("#main"));
-  const px=pc.getContext("2d"); let PW=0,PH=0,pr=1, alpha=0, want=1, lastScroll=0, running=false;
-  const P=[], count=()=>Math.round(Math.min(26, Math.max(12, innerWidth/40)));
-  const rnd=(a,b)=>a+Math.random()*(b-a);
-  const make=(top)=>({x:rnd(0,PW),y:top?rnd(-PH,0):rnd(0,PH),s:rnd(7,15)*pr,rot:rnd(0,6.28),vr:rnd(-.012,.012),
-    vy:rnd(.35,.8)*pr,sw:rnd(.4,1.1)*pr,ph:rnd(0,6.28),fl:rnd(.01,.03),dust:Math.random()<.35});
-  const sizeP=()=>{pr=Math.min(devicePixelRatio||1,2);PW=pc.width=innerWidth*pr;PH=pc.height=innerHeight*pr;
-    P.length=0; for(let i=0;i<count();i++) P.push(make(false));};
-  sizeP(); addEventListener("resize",sizeP,{passive:true});
-  let tm=0; addEventListener("scroll",()=>{lastScroll=performance.now(); want=0; wake(); clearTimeout(tm); tm=setTimeout(wake,700);},{passive:true});
-  function petal(p){
-    px.save(); px.translate(p.x,p.y); px.rotate(p.rot);
-    px.scale(1, .45+.55*Math.abs(Math.sin(p.ph*1.3)));
-    const g=px.createRadialGradient(-p.s*.2,-p.s*.2,0,0,0,p.s);
-    g.addColorStop(0,"rgba(252,244,228,.95)"); g.addColorStop(1,"rgba(226,203,160,.75)");
-    px.fillStyle=g; px.beginPath();
-    px.moveTo(0,-p.s); px.bezierCurveTo(p.s*.9,-p.s*.8,p.s*.8,p.s*.5,0,p.s*.9);
-    px.bezierCurveTo(-p.s*.8,p.s*.5,-p.s*.9,-p.s*.8,0,-p.s); px.fill(); px.restore();
+/* ---------- ambient layer: petals that never stop, warm candle bokeh, gold dust ----------
+   Always running (not only when the guest pauses); petals sit at different depths and drift
+   with the scroll like parallax. Everything is drawn from pre-rendered sprites, so the cost stays low. */
+if (CFG.petals !== false) {
+  const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const pc = document.createElement("canvas"); pc.className = "petals"; pc.setAttribute("aria-hidden","true");
+  const sun = document.createElement("div"); sun.className = "sun"; sun.setAttribute("aria-hidden","true");
+  document.body.insertBefore(sun, $("#main")); document.body.insertBefore(pc, $("#main"));
+  const px = pc.getContext("2d");
+  let PW = 0, PH = 0, pr = 1;
+  const rnd = (a,b) => a + Math.random()*(b-a);
+  const spr = (w, h, draw) => { const c = document.createElement("canvas"); c.width = w; c.height = h; draw(c.getContext("2d"), w, h); return c; };
+  const petalSpr = [["#fcf5e8","#e6cfa6"],["#fbf0e6","#e7c7b2"],["#fffaf1","#dcc39a"]].map(([a,b]) => spr(64, 64, (g,w,h) => {
+    const gr = g.createRadialGradient(24,22,2,32,32,32); gr.addColorStop(0,a); gr.addColorStop(1,b);
+    g.fillStyle = gr; g.beginPath(); g.moveTo(32,4); g.bezierCurveTo(58,8,56,44,32,60); g.bezierCurveTo(8,44,6,8,32,4); g.fill();
+    g.strokeStyle = "rgba(160,120,70,.18)"; g.lineWidth = 1; g.beginPath(); g.moveTo(32,10); g.quadraticCurveTo(30,34,32,54); g.stroke(); }));
+  const bokehSpr = spr(96, 96, (g) => { const gr = g.createRadialGradient(48,48,0,48,48,48);
+    gr.addColorStop(0,"rgba(255,220,150,.9)"); gr.addColorStop(.35,"rgba(245,200,120,.35)"); gr.addColorStop(1,"rgba(240,190,110,0)"); g.fillStyle = gr; g.fillRect(0,0,96,96); });
+  const sparkSpr = spr(32, 32, (g) => { const gr = g.createRadialGradient(16,16,0,16,16,16);
+    gr.addColorStop(0,"rgba(255,240,200,1)"); gr.addColorStop(.25,"rgba(255,215,140,.7)"); gr.addColorStop(1,"rgba(255,200,120,0)"); g.fillStyle = gr; g.fillRect(0,0,32,32);
+    g.fillStyle = "rgba(255,245,220,.9)"; g.fillRect(15.4,4,1.2,24); g.fillRect(4,15.4,24,1.2); });
+  const phone = innerWidth < 700;
+  const P = [], B = [], D = [], FX = [];
+  const mkPetal = (top) => ({ x: rnd(0,PW), y: top ? rnd(-PH*0.3,-20*pr) : rnd(0,PH), s: rnd(10,20)*pr, z: rnd(.35,1),
+    rot: rnd(0,6.28), vr: rnd(-.015,.015), vy: rnd(.35,.8)*pr, sw: rnd(.3,1)*pr, ph: rnd(0,6.28), fl: rnd(.012,.03), k: (Math.random()*3)|0 });
+  const mkBokeh = () => ({ x: rnd(0,PW), y: rnd(0,PH), r: rnd(18,54)*pr, z: rnd(.1,.35), a: rnd(.05,.16), ph: rnd(0,6.28), sp: rnd(.004,.012), vx: rnd(-.12,.12)*pr, vy: rnd(-.18,-.05)*pr });
+  const mkDust = () => ({ x: rnd(0,PW), y: rnd(0,PH), r: rnd(3,7)*pr, z: rnd(.2,.6), ph: rnd(0,6.28), sp: rnd(.02,.05), vy: rnd(-.25,-.08)*pr });
+  function size(){
+    pr = Math.min(devicePixelRatio||1, 1.5); PW = pc.width = Math.round(innerWidth*pr); PH = pc.height = Math.round(innerHeight*pr);
+    P.length = B.length = D.length = 0;
+    const np = RM ? 6 : (phone ? 16 : 24), nb = RM ? 4 : (phone ? 7 : 11), nd = RM ? 0 : (phone ? 10 : 16);
+    for (let i=0;i<np;i++) P.push(mkPetal(false)); for (let i=0;i<nb;i++) B.push(mkBokeh()); for (let i=0;i<nd;i++) D.push(mkDust());
   }
-  function dust(p){
-    const r=p.s*.18, g=px.createRadialGradient(p.x,p.y,0,p.x,p.y,r*4);
-    g.addColorStop(0,"rgba(240,210,140,.9)"); g.addColorStop(1,"rgba(240,210,140,0)");
-    px.fillStyle=g; px.beginPath(); px.arc(p.x,p.y,r*4,0,6.283); px.fill();
-  }
-  function frame(t){
-    if (performance.now()-lastScroll>650) want=1;
-    alpha += (want-alpha)*(want?0.03:0.12);
+  size(); addEventListener("resize", () => { if (Math.abs(innerWidth*Math.min(devicePixelRatio||1,1.5) - PW) > 2) size(); }, {passive:true});
+  let lastY = scrollY, vis = 1;
+  function frame(){
+    const dy = (scrollY - lastY) * pr; lastY = scrollY;
     px.clearRect(0,0,PW,PH);
-    if (alpha<0.01 && !want){ running=false; return; }
-    px.globalAlpha=alpha*(CFG.petals_opacity||0.8);
-    for(const p of P){
-      p.ph+=p.fl; p.y+=p.dust?p.vy*.5:p.vy; p.x+=Math.sin(p.ph)*p.sw; p.rot+=p.vr;
-      if(p.y>PH+30*pr){ Object.assign(p, make(true)); p.y=-20*pr; }
-      p.dust?dust(p):petal(p);
-    }
+    // warm bokeh (additive, very soft)
+    px.globalCompositeOperation = "lighter";
+    for (const b of B){ b.ph += b.sp; b.x += b.vx; b.y += b.vy - dy*b.z;
+      if (b.y < -b.r*2) { b.y = PH + b.r; b.x = rnd(0,PW); } if (b.y > PH + b.r*2) { b.y = -b.r; } if (b.x < -b.r*2) b.x = PW + b.r; if (b.x > PW + b.r*2) b.x = -b.r;
+      px.globalAlpha = b.a * (.6 + .4*Math.sin(b.ph)) * vis; px.drawImage(bokehSpr, b.x-b.r, b.y-b.r, b.r*2, b.r*2); }
+    for (const d of D){ d.ph += d.sp; d.y += d.vy - dy*d.z; d.x += Math.sin(d.ph*.7)*.2*pr;
+      if (d.y < -10) { d.y = PH + 10; d.x = rnd(0,PW); } if (d.y > PH + 10) d.y = -10;
+      px.globalAlpha = Math.max(0, Math.sin(d.ph)) * .55 * vis; px.drawImage(sparkSpr, d.x-d.r, d.y-d.r, d.r*2, d.r*2); }
+    // petals (normal blending), deeper ones smaller, fainter and slower on scroll
+    px.globalCompositeOperation = "source-over";
+    for (const p of P){ p.ph += p.fl; p.y += p.vy*(.5+.5*p.z) - dy*(.25+.55*p.z); p.x += Math.sin(p.ph)*p.sw; p.rot += p.vr;
+      if (p.y > PH + 30*pr) Object.assign(p, mkPetal(true)); if (p.y < -PH*0.4) { p.y = PH + 20*pr; p.x = rnd(0,PW); }
+      const s = p.s*(.6+.4*p.z), fl = .45 + .55*Math.abs(Math.sin(p.ph*1.3));
+      px.globalAlpha = (.35 + .5*p.z) * (CFG.petals_opacity||.85) * vis;
+      px.setTransform(1,0,0,1,p.x,p.y); px.rotate(p.rot); px.scale(1, fl); px.drawImage(petalSpr[p.k], -s, -s, s*2, s*2); px.setTransform(1,0,0,1,0,0); }
+    // bursts (tap, opening, answer sent)
+    for (let i = FX.length-1; i >= 0; i--){ const f = FX[i]; f.t += 1/60;
+      f.vx *= .985; f.vy = f.vy*.985 + (f.spark ? .02 : .06)*pr; f.x += f.vx; f.y += f.vy; f.rot += f.vr;
+      const life = 1 - f.t/f.life; if (life <= 0) { FX.splice(i,1); continue; }
+      px.globalAlpha = Math.min(1, life*1.6);
+      if (f.spark){ px.globalCompositeOperation = "lighter"; px.drawImage(sparkSpr, f.x-f.s, f.y-f.s, f.s*2, f.s*2); px.globalCompositeOperation = "source-over"; }
+      else { px.setTransform(1,0,0,1,f.x,f.y); px.rotate(f.rot); px.scale(1,.5+.5*Math.abs(Math.sin(f.t*6+f.rot))); px.drawImage(petalSpr[f.k], -f.s, -f.s, f.s*2, f.s*2); px.setTransform(1,0,0,1,0,0); } }
+    px.globalAlpha = 1;
+    if (!FX.length) pc.classList.remove("over");
     requestAnimationFrame(frame);
   }
-  function wake(){ if(!running){running=true;requestAnimationFrame(frame);} }
-  wake();
+  requestAnimationFrame(frame);
+  window.__fx = { burst(x, y, o){ o = o||{}; const sp = (o.spread||1)*pr;
+    if (o.over) pc.classList.add("over");
+    for (let i=0;i<(o.petals||8);i++){ const a = rnd(0,6.28), v = rnd(2,6)*sp;
+      FX.push({x:x*pr, y:y*pr, vx:Math.cos(a)*v, vy:Math.sin(a)*v - rnd(1,3)*pr, rot:rnd(0,6.28), vr:rnd(-.2,.2), s:rnd(8,15)*pr, k:(Math.random()*3)|0, t:0, life:rnd(1.3,2.2)}); }
+    for (let i=0;i<(o.sparks||6);i++){ const a = rnd(0,6.28), v = rnd(1,5)*sp;
+      FX.push({x:x*pr, y:y*pr, vx:Math.cos(a)*v, vy:Math.sin(a)*v - rnd(.5,2)*pr, rot:0, vr:0, s:rnd(5,11)*pr, spark:true, t:0, life:rnd(.8,1.5)}); } } };
+  // a gentle touch response anywhere on the page (not on controls)
+  if (!RM) document.addEventListener("pointerdown", e => {
+    if (!$("#loader").classList.contains("done")) return;
+    if (e.target.closest("input,textarea,button,label,a,select,.map")) return;
+    window.__fx.burst(e.clientX, e.clientY, {petals: 5, sparks: 6, spread: .7});
+  }, {passive: true});
 }
 
 /* ---------- countdown & calendar ---------- */
@@ -595,8 +699,9 @@ f.querySelectorAll(".stepper button").forEach(b=>b.addEventListener("click",()=>
 const syncAttend=()=>{ $("#yesOnly").classList.toggle("hide", f.elements.attend.value!=="Да"); };
 f.querySelectorAll("input[name=attend]").forEach(r=>r.addEventListener("change",syncAttend));
 const KEY="rsvp:"+(CFG.slug||"event");
-const showDone=(name,att)=>{
+const showDone=(name,att,celebrate)=>{
   f.classList.add("hide"); $("#ok").classList.remove("hide");
+  if (celebrate && att==="Да" && window.__fx) { const r=$("#ok").getBoundingClientRect(); window.__fx.burst(r.left+r.width/2, r.top+40, {petals:18, sparks:16, spread:1.2}); }
   $("#okt").textContent = att==="Да" ? `${name}, ждём вас! Ответ сохранён.` : `${name}, жаль, что не получится. Спасибо, что ответили.`;
 };
 try{ const prev=JSON.parse(localStorage.getItem(KEY)||"null"); if(prev&&prev.name) showDone(prev.name, prev.attend); }catch(e){}
@@ -619,7 +724,7 @@ f.addEventListener("submit", async ev=>{
       await fetch(CFG.rsvp_endpoint,{method:"POST",mode:"no-cors",body:new URLSearchParams(data)});
     } else { console.warn("RSVP endpoint not set, demo mode", data); await new Promise(r=>setTimeout(r,500)); }
     try{ localStorage.setItem(KEY, JSON.stringify({name, attend:att})); }catch(e){}
-    showDone(name, att);
+    showDone(name, att, true);
   }catch(e){
     er.textContent="Не получилось отправить. Проверьте интернет и попробуйте ещё раз.";
   }finally{ sending=false; sb.disabled=false; sb.textContent="Отправить ответ"; }
